@@ -1,0 +1,28 @@
+<section class="subheader">
+    <h1>TechBlog</h1>
+    <h4>Welcome to the TechBlog</h4>
+</section>
+
+<section id="posts">
+    {{!-- LOOP OVER AND RENDER POSTS --}}
+    {{#each post}}
+    <div id="post">
+        <a class="postlink" href="/post/{{this.id}}">
+            <div id="postheader">
+                <h3>{{this.title}}</h3>
+                <h5>posted by: {{this.user.username}}</h5>
+            </div>
+            <p>{{this.content}}</p>
+        </a>
+    </div>
+    {{/each}}
+
+    {{!-- DISPLAY NEW POST LINK IF USER IS LOGGED IN --}}
+    {{#if user}}
+    <div id="newpost">
+        <a href="/newpost">
+            <h5>New Post</h5>
+        </a>
+    </div>
+    {{/if}}
+</section>
