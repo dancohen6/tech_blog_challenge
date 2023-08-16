@@ -1,0 +1,24 @@
+<div class="subheader">
+  <h1>Dashboard</h1>
+  <h4>What's up, {{username}}?</h4>
+</div>
+
+<h4 id="yourposts">Your Posts</h4>
+<div id="newpost">
+  <a href="/newpost">
+    <h5>Make a New Post</h5>
+  </a>
+</div>
+
+<section id="postsdash">
+  {{#each post}}
+  <div id="post">
+    <a class="postlink" href="/post/{{this.id}}">
+      <div id="postheader">
+        <h3>{{this.title}}</h3>
+      </div>
+      <p>{{this.content}}</p>
+    </a>
+  </div>
+  {{/each}}
+</section>
