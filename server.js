@@ -27,3 +27,16 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+// ROUTES //
+const public_routes = require('./controllers/public_routes');
+const auth_routes = require('./controllers/auth_routes');
+const private_routes = require('./controllers/private_routes');
+app.use('/', [public_routes, auth_routes, private_routes]);
+
+// DB SYNC AND SERVER START //
+db.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log('Server started on port %s', PORT);
+  });
+});
