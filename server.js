@@ -6,7 +6,7 @@ const { engine } = require('express-handlebars');
 const db = require('./db/connection');
 
 // DEFINE CONSTANTS //
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // CREATE EXPRESS APP //
 const app = express();
